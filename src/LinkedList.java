@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 /**
  * Linked list to be used as a queue. Only needs addLast and removeFirst (enqueue and dequeue) together with
  * size() and isEmpty().
@@ -7,6 +9,8 @@
  */
 public class LinkedList {
     Node first;
+    Node last;
+    int size = 0;
 
     /**
      * Constructor to create an empty list.
@@ -21,7 +25,13 @@ public class LinkedList {
      * @param newNode
      */
     public void addLast(Node newNode) {
-
+        if(size == 0){
+            first = newNode;
+        }else {
+            first.next = newNode;
+        }
+        last = newNode;
+        size += 1;
     }
 
     /**
@@ -29,8 +39,11 @@ public class LinkedList {
      * (bad practice, should throw an Exception)
      * @return
      */
-    public Node removeFirst() {
-        return null;
+    public String removeFirst() {
+        String mem = first.data;
+        first = first.next;
+        size -= 1;
+        return mem;
     }
 
     /**
@@ -39,14 +52,16 @@ public class LinkedList {
      * Could be used by isEmpty...
      * @return
      */
-    public int size() {
-        return 0;
-    }
 
     /**
      * returns true if the queue is empty.
      * @return
      */
+
+    public int size() {
+        return size;
+    }
+
     public boolean isEmpty() {
         return size()==0;
     }

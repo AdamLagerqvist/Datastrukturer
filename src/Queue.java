@@ -5,25 +5,25 @@
  * @author Magnus Silverdal
  */
 public class Queue {
-    // Need data structure....
+    private final LinkedList Queue;
 
     public Queue() {
-
+        Queue = new LinkedList();
     }
 
     public void enqueue(String text) {
-
+        Queue.addLast(new Node( "" + text, null));
     }
 
     public String dequeue() {
-        return "";
+        return Queue.removeFirst();
     }
 
     public boolean isEmpty() {
-        return false;
+        return Queue.size() == 0;
     }
 
     public int size() {
-        return -1;
+        return Queue.size;
     }
 }
