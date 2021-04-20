@@ -4,19 +4,19 @@
  *
  * @author Magnus Silverdal
  */
-public class Queue {
-    private final LinkedList Queue;
+public class Queue<T> {
+    private LinkedList Queue;
 
     public Queue() {
-        Queue = new LinkedList();
+        Queue = new LinkedList<T>();
     }
 
-    public void enqueue(String text) {
-        Queue.addLast(new Node( "" + text, null));
+    public void enqueue(T data) {
+        Queue.addLast(new Node( data, null));
     }
 
-    public String dequeue() {
-        return Queue.removeFirst();
+    public T dequeue() {
+        return (T) Queue.removeFirst();
     }
 
     public boolean isEmpty() {

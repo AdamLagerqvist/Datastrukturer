@@ -61,6 +61,6 @@ public class QueueTest {
         Queue q = new Queue();
         q.enqueue("Test");
         q.enqueue("Another test");
-        assertEquals("Test",q.dequeue());
+        assertEquals("Test", q.dequeue());
     }
 }

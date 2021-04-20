@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 /**
  * Linked list to be used as a queue. Only needs addLast and removeFirst (enqueue and dequeue) together with
  * size() and isEmpty().
@@ -7,7 +5,7 @@ import java.io.IOException;
  *
  * @author Magnus Silverdal
  */
-public class LinkedList {
+public class LinkedList<T> {
     Node first;
     Node last;
     int size = 0;
@@ -24,7 +22,7 @@ public class LinkedList {
      * (first=null). Make sure to solve that properly...
      * @param newNode
      */
-    public void addLast(Node newNode) {
+    public void addLast(Node<T> newNode) {
         if(size == 0){
             first = newNode;
         }else {
@@ -39,8 +37,8 @@ public class LinkedList {
      * (bad practice, should throw an Exception)
      * @return
      */
-    public String removeFirst() {
-        String mem = first.data;
+    public T removeFirst() {
+        T mem = (T) first.data;
         first = first.next;
         size -= 1;
         return mem;

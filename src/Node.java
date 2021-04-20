@@ -4,16 +4,16 @@
  *
  * @author Magnus Silverdal
  */
-public class Node {
-    String data;
+public class Node<T> {
+    T data;
     Node next;
 
-    public Node(String data, Node next) {
+    public Node(T data, Node next) {
         this.data = data;
         this.next = next;
     }
 
-    public String getData() {
+    public T getData() {
         return data;
     }
 
