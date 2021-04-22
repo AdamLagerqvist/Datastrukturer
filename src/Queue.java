@@ -5,25 +5,25 @@
  * @author Magnus Silverdal
  */
 public class Queue<T> {
-    private LinkedList Queue;
+    private LinkedList<T> queue;
 
     public Queue() {
-        Queue = new LinkedList<T>();
+        queue = new LinkedList<T>();
     }
 
     public void enqueue(T data) {
-        Queue.addLast(new Node( data, null));
+        queue.addLast(new Node( data, null));
     }
 
     public T dequeue() {
-        return (T) Queue.removeFirst();
+        return queue.removeFirst();
     }
 
     public boolean isEmpty() {
-        return Queue.size() == 0;
+        return queue.size() == 0;
     }
 
     public int size() {
-        return Queue.size;
+        return queue.size;
     }
 }

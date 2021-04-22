@@ -6,8 +6,8 @@
  * @author Magnus Silverdal
  */
 public class LinkedList<T> {
-    Node first;
-    Node last;
+    Node<T> first;
+    Node<T> last;
     int size = 0;
 
     /**
@@ -38,7 +38,7 @@ public class LinkedList<T> {
      * @return
      */
     public T removeFirst() {
-        T mem = (T) first.data;
+        T mem = first.data;
         first = first.next;
         size -= 1;
         return mem;

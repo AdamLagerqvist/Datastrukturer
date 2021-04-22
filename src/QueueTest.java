@@ -34,7 +34,7 @@ public class QueueTest {
 
     @Test
     public void enqueueShouldIncreaseSize() {
-        Queue q = new Queue();
+        Queue<String> q = new Queue<>();
         q.enqueue("Test");
         q.enqueue("Another test");
         assertEquals(2,q.size());
